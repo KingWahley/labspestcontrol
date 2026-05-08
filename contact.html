@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us | LABS PEST CONTROL Boston</title>
+    <meta name="description" content="Get in touch with LABS PEST CONTROL for professional pest control and extermination services in Boston. Book your free inspection today.">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <style>
+        .contact-hero {
+            background: #5b694b;
+            padding: 4rem 1rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            min-height: 500px;
+        }
+        .shoe-overlay {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            z-index: 1;
+            opacity: 0.9;
+        }
+        .bug-overlay {
+            position: absolute;
+            top: 280px;
+            left: 52%;
+            transform: translateX(-50%);
+            width: 60px;
+            z-index: 0;
+        }
+        .contact-hero h1 {
+            font-family: 'Bebas Neue', sans-serif;
+            font-size: clamp(4rem, 12vw, 8rem);
+            color: #fff;
+            line-height: 0.85;
+            z-index: 10;
+            transform: rotate(-3deg);
+            text-shadow: 2px 4px 10px rgba(0,0,0,0.2);
+        }
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.5fr;
+            gap: 4rem;
+            padding: 5rem 0;
+        }
+        @media(max-width: 800px) {
+            .contact-grid { grid-template-columns: 1fr; gap: 3rem; }
+        }
+        .info-card {
+            background: var(--bg2);
+            padding: 2.5rem;
+            border-radius: 4px;
+        }
+        .info-item {
+            display: flex;
+            gap: 1.25rem;
+            margin-bottom: 2rem;
+        }
+        .info-icon {
+            width: 44px;
+            height: 44px;
+            background: var(--ink);
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        .info-label {
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            color: var(--ink3);
+            margin-bottom: 0.25rem;
+        }
+        .info-val {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--ink);
+        }
+        .contact-form {
+            display: grid;
+            gap: 1.5rem;
+        }
+        .form-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        @media(max-width: 600px) {
+            .form-row { grid-template-columns: 1fr; }
+        }
+        .form-group label {
+            display: block;
+            font-family: 'Oswald', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.1em;
+            text-transform: uppercase;
+            margin-bottom: 0.5rem;
+            color: var(--ink2);
+        }
+        .form-group input, .form-group select, .form-group textarea {
+            width: 100%;
+            padding: 0.9rem;
+            border: 1px solid #ddd;
+            font-family: 'DM Sans', sans-serif;
+            font-size: 0.95rem;
+            border-radius: 2px;
+        }
+        .form-group input:focus, .form-group textarea:focus {
+            outline: none;
+            border-color: var(--accent);
+        }
+    </style>
+</head>
+<body>
+    <nav>
+        <a href="index.html" class="logo">LABS PEST<span> CONTROL</span></a>
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">Home</a>
+            <a href="about.html" class="nav-link">About Us</a>
+            <a href="services.html" class="nav-link">Services</a>
+            <a href="blog.html" class="nav-link">Blog</a>
+            <a href="contact.html" class="nav-link active">Contact Us</a>
+            <button class="nav-cta" onclick="window.location.href='#contact-form'">Book Inspection</button>
+        </div>
+    </nav>
+
+    <header class="contact-hero">
+        <img src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=600&q=80" alt="Shoe bottom" class="shoe-overlay">
+        <img src="https://community.halte.in/uploads/default/original/1X/60f25ac244107cb4d071e3aa42eb3f38203faca1.jpeg" alt="Cockroach" class="bug-overlay" style="filter: brightness(0.8) contrast(1.2)">
+        <h1>DON'T USE<br>YOUR SHOE</h1>
+    </header>
+
+    <section class="container">
+        <div class="contact-grid">
+            <div class="info-card">
+                <div class="sec-label">Get In Touch</div>
+                <h2 class="sec-title" style="font-size: 2.2rem; margin-bottom: 2rem">WE ARE READY<br>TO HELP</h2>
+                
+                <div class="info-item">
+                    <div class="info-icon"><i data-lucide="phone"></i></div>
+                    <div>
+                        <div class="info-label">Phone</div>
+                        <div class="info-val">781-691-1411</div>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-icon"><i data-lucide="mail"></i></div>
+                    <div>
+                        <div class="info-label">Email</div>
+                        <div class="info-val">Ayomipor@labspestcontrol.com</div>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-icon"><i data-lucide="map-pin"></i></div>
+                    <div>
+                        <div class="info-label">Main Office</div>
+                        <div class="info-val">Po Box 260262, Boston, MA 02126</div>
+                    </div>
+                </div>
+                
+                <div class="info-item">
+                    <div class="info-icon"><i data-lucide="clock"></i></div>
+                    <div>
+                        <div class="info-label">Availability</div>
+                        <div class="info-val">Mon–Sun, 7am–8pm (24hr Emergency)</div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="contact-form">
+                <div class="sec-label">Send a Message</div>
+                <h2 class="sec-title" style="font-size: 2.2rem; margin-bottom: 2.5rem">REQUEST A FREE<br>SITE INSPECTION</h2>
+                <form class="contact-form">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Full Name</label>
+                            <input type="text" placeholder="e.g. John Doe" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Phone Number</label>
+                            <input type="tel" placeholder="e.g. 0801 234 5678" required>
+                        </div>
+                    </div>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label>Email Address</label>
+                            <input type="email" placeholder="john@example.com" required>
+                        </div>
+                        <div class="form-group">
+                            <label>Pest Type</label>
+                            <select>
+                                <option>Cockroaches</option>
+                                <option>Termites</option>
+                                <option>Rodents (Rats/Mice)</option>
+                                <option>Mosquitoes</option>
+                                <option>Bed Bugs</option>
+                                <option>Other / Not Sure</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label>Your Message / Location Details</label>
+                        <textarea rows="4" placeholder="Briefly describe the issue and your location in Greater Boston..."></textarea>
+                    </div>
+                    <button class="btn-primary" type="submit" style="width: fit-content; padding: 1rem 3rem">Send Request Now</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <footer style="margin-top: 0">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-logo">LABS PEST<span> CONTROL</span></div>
+                <p class="footer-desc">Boston's most trusted professional pest control service. Protecting homes and businesses since 2009.</p>
+                <div style="display:flex;gap:0.4rem;margin-top:1.25rem">
+                    <div class="fbadge">SON Certified</div><div class="fbadge">EPA Safe</div><div class="fbadge">Insured</div>
+                </div>
+            </div>
+            <div class="fcol"><h5>Services</h5><ul><li><a href="services.html" style="text-decoration:none;color:inherit">Fumigation</a></li><li><a href="services.html" style="text-decoration:none;color:inherit">Rodent Control</a></li><li><a href="services.html" style="text-decoration:none;color:inherit">Termite Treatment</a></li><li><a href="services.html" style="text-decoration:none;color:inherit">Mosquito Fogging</a></li><li><a href="services.html" style="text-decoration:none;color:inherit">Bed Bug Removal</a></li></ul></div>
+            <div class="fcol"><h5>Service Areas</h5><ul><li>Back Bay</li><li>South End</li><li>Cambridge</li><li>Somerville</li><li>Quincy</li></ul></div>
+            <div class="fcol"><h5>Contact</h5><ul><li><i data-lucide="phone" style="width:14px;height:14px;margin-right:6px"></i>781-691-1411</li><li><i data-lucide="mail" style="width:14px;height:14px;margin-right:6px"></i>Ayomipor@labspestcontrol.com</li><li><i data-lucide="clock" style="width:14px;height:14px;margin-right:6px"></i>Mon–Sun, 7am–8pm</li><li><i data-lucide="alert-triangle" style="width:14px;height:14px;margin-right:6px"></i>24hr Emergency</li></ul></div>
+        </div>
+        <div class="fbottom">
+            <p>© 2025 LABS PEST CONTROL Professional Pest Control. All rights reserved.</p>
+            <div class="fbadges"><div class="fbadge">Licensed</div><div class="fbadge">Insured</div></div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
