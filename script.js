@@ -1,3 +1,11 @@
+// Initialize Lenis Smooth Scroll
+const lenis = new Lenis();
+lenis.on('scroll', ScrollTrigger.update);
+gsap.ticker.add((time) => {
+    lenis.raf(time * 1000);
+});
+gsap.ticker.lagSmoothing(0);
+
 function showPest(i, btn) {
     document.querySelectorAll('.pest-panel').forEach(p => p.classList.remove('active'));
     document.querySelectorAll('.pest-tab').forEach(t => t.classList.remove('active'));

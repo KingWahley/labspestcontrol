@@ -281,5 +281,5 @@ footer{background:var(--bg2);border-top:1px solid #ddd;padding:3rem 2rem 1.5rem}
 .reveal.vis{opacity:1;transform:translateY(0)}
 @media(max-width:640px){
   nav .nav-links{display:none}
-  .hero-stats{gap:1.5rem}
+  .hero-stats{display:none}
 }
