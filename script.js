@@ -30,13 +30,54 @@ function result() {
     document.getElementById('fp').style.width = '100%';
 }
 
-const obs = new IntersectionObserver(e => {
-    e.forEach(x => {
-        if (x.isIntersecting) x.target.classList.add('vis');
-    });
-}, { threshold: 0.1 });
+// GSAP Animations
+gsap.registerPlugin(ScrollTrigger);
 
-document.querySelectorAll('.reveal').forEach(el => obs.observe(el));
+// Hero Entrance
+const heroTl = gsap.timeline({ defaults: { ease: "power3.out", duration: 1 } });
+heroTl.from(".hero-badge", { y: 20, opacity: 0, delay: 0.5 })
+      .from(".hero-content h1", { y: 30, opacity: 0 }, "-=0.7")
+      .from(".hero-sub", { y: 20, opacity: 0 }, "-=0.7")
+      .from(".hero-btns", { y: 20, opacity: 0 }, "-=0.7")
+      .from(".hero-stats", { y: 20, opacity: 0 }, "-=0.7");
+
+// Scroll Reveals
+const reveals = document.querySelectorAll('.reveal');
+gsap.set(reveals, { y: 40, opacity: 0 });
+
+reveals.forEach(el => {
+    gsap.to(el, {
+        scrollTrigger: {
+            trigger: el,
+            start: "top 85%",
+            toggleActions: "play none none none"
+        },
+        y: 0,
+        opacity: 1,
+        duration: 1,
+        ease: "power2.out"
+    });
+});
+
+// Staggered Grids
+const staggeredGrids = ['.signs-grid', '.why-row', '.test-grid', '.blog-grid'];
+staggeredGrids.forEach(grid => {
+    const cards = document.querySelectorAll(`${grid} > *`);
+    if (cards.length) {
+        gsap.set(cards, { y: 30, opacity: 0 });
+        gsap.to(cards, {
+            scrollTrigger: {
+                trigger: grid,
+                start: "top 80%"
+            },
+            y: 0,
+            opacity: 1,
+            duration: 0.8,
+            stagger: 0.15,
+            ease: "power2.out"
+        });
+    }
+});
 
 // Initialize Lucide Icons
 document.addEventListener('DOMContentLoaded', () => {
