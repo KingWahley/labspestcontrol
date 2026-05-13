@@ -3,10 +3,10 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The 2025 Guide to Termite Protection in Boston | LABS PEST CONTROL</title>
+    <title>The 2026 Guide to Termite Protection in Boston | LABS PEST CONTROL</title>
     <meta
       name="description"
-      content="Learn how to protect your Boston property from subterranean termites with our comprehensive 2025 guide. Expert tips from LABS PEST CONTROL."
+      content="Learn how to protect your Boston property from subterranean termites with our comprehensive 2026 guide. Expert tips from LABS PEST CONTROL."
     />
     <link rel="stylesheet" href="style.css" />
     <script src="https://unpkg.com/lucide@latest"></script>
@@ -209,22 +209,22 @@
           <aside class="post-sidebar">
             <div class="sidebar-widget">
               <h3 class="widget-title">Popular Articles</h3>
-              <a href="blog-post.html?id=termite-guide-2025" class="related-post">
-                <img src="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=200&q=70" class="related-img" alt="Post thumbnail" />
+              <a href="blog-post.html?id=cockroach-guide-2026" class="related-post">
+                <img src="https://static.vecteezy.com/system/resources/previews/020/336/322/non_2x/cockroach-with-inside-public-bus-eliminate-cockroach-in-vehicle-building-apartment-house-cockroaches-carriers-of-disease-eliminated-idea-get-rid-insects-and-put-insect-protection-systems-photo.JPG" class="related-img" alt="Post thumbnail" />
                 <div class="related-info">
-                  <h4>The 2025 Guide to Termite Protection</h4>
-                  <span>Termites · 4 min</span>
+                  <h4>The 2026 Guide to Cockroach Protection</h4>
+                  <span>Cockroaches · 8 min</span>
                 </div>
               </a>
               <a href="blog-post.html?id=cockroaches-return" class="related-post">
-                <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=200&q=70" class="related-img" alt="Post thumbnail" />
+                <img src="file:///C:/Users/USER/Desktop/pest%20control/assets/diyspray.png" class="related-img" alt="Post thumbnail" />
                 <div class="related-info">
                   <h4>Why DIY Sprays Always Fail</h4>
                   <span>Cockroaches · 5 min</span>
                 </div>
               </a>
               <a href="blog-post.html?id=rodent-exclusion" class="related-post">
-                <img src="https://images.unsplash.com/photo-1504817343863-5092a923803e?w=200&q=70" class="related-img" alt="Post thumbnail" />
+                <img src="https://www.havahart.com/media/Articles/Havahart/What-to-Do-if-You-Hear-An-Animal-in-the-Wall.jpg" class="related-img" alt="Post thumbnail" />
                 <div class="related-info">
                   <h4>Signs Rodents Are in Your Walls</h4>
                   <span>Rodents · 3 min</span>
@@ -348,7 +348,7 @@
     <script>
       function renderPost() {
         const params = new URLSearchParams(window.location.search);
-        const postId = params.get("id") || "termite-guide-2025";
+        const postId = params.get("id") || "cockroach-guide-2026";
         const post = blogPosts[postId];
 
         if (post) {
@@ -364,33 +364,15 @@
         }
 
         // Re-init lucide icons after injection
-        lucide.createIcons();
+        if (window.lucide) {
+          lucide.createIcons();
+        }
       }
 
+      // Run on load
       window.addEventListener("DOMContentLoaded", renderPost);
       
-      // Animations
-      gsap.registerPlugin(ScrollTrigger);
-      
-      const lenis = new Lenis();
-      lenis.on('scroll', ScrollTrigger.update);
-      gsap.ticker.add((time) => {
-        lenis.raf(time * 1000);
-      });
-      gsap.ticker.lagSmoothing(0);
-
-      gsap.utils.toArray('.reveal').forEach((el) => {
-        gsap.from(el, {
-          y: 30,
-          opacity: 0,
-          duration: 1,
-          scrollTrigger: {
-            trigger: el,
-            start: 'top 85%',
-          },
-        });
-      });
-      
+      // Page specific animations if needed (reveals are handled by script.js)
       document.getElementById('year').textContent = new Date().getFullYear();
     </script>
   </body>

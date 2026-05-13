@@ -1,39 +1,38 @@
 const blogPosts = {
-  'termite-guide-2025': {
-    category: 'Termites',
-    date: 'May 12, 2025',
-    title: 'THE 2025 GUIDE TO TERMITE PROTECTION IN BOSTON',
-    subtitle: 'Everything you need to know about protecting your structural investments from the hidden threat of subterranean termites in the Boston area.',
-    image: 'https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=1400&q=80',
+  'cockroach-guide-2026': {
+    category: 'Cockroaches',
+    date: 'May 12, 2026',
+    title: 'THE 2026 GUIDE TO COCKROACH PROTECTION IN BOSTON',
+    subtitle: 'Everything you need to know about eliminating persistent infestations in Boston\'s historic neighborhoods and modern apartments.',
+    image: 'https://static.vecteezy.com/system/resources/previews/020/336/322/non_2x/cockroach-with-inside-public-bus-eliminate-cockroach-in-vehicle-building-apartment-house-cockroaches-carriers-of-disease-eliminated-idea-get-rid-insects-and-put-insect-protection-systems-photo.JPG',
     content: `
-      <p>Termites are often referred to as "silent destroyers" for a reason. In a city like Boston, where the humidity can be high and the older wooden structures are abundant, termite activity is a serious threat to any unprotected property.</p>
+      <p>Cockroaches are among the most resilient pests on Earth. In a historic city like Boston, where aging infrastructure and high-density living are common, managing these infestations requires a strategic, professional approach.</p>
       
-      <h3>Why Boston is a Termite Hotspot</h3>
-      <p>The coastal geography and varying soil conditions of Boston provide the perfect environment for subterranean termites. Areas like Back Bay, South End, and the Seaport, with their historic foundations and high water tables, are particularly susceptible.</p>
+      <h3>Why Boston is a Cockroach Haven</h3>
+      <p>The combination of historic brownstones with original plumbing and modern, high-heat apartment complexes creates the perfect microclimate for cockroaches. Areas like the North End, Beacon Hill, and Allston often face unique challenges due to building age and proximity.</p>
       
       <div class="discovery-box">
-        <h4><i data-lucide="microscope"></i> Scientific Discovery</h4>
-        <p>Recent studies show that termite colonies can travel up to 130 feet from their central nest. This means even if you don't see signs on your building, the threat could be active in your soil.</p>
+        <h4><i data-lucide="zap"></i> Biological Fact</h4>
+        <p>A German cockroach can live for up to a week without its head. They don't breathe through their mouths, but through tiny holes in their body segments. This resilience is why DIY methods often fail.</p>
       </div>
 
-      <h3>Early Warning Signs</h3>
+      <h3>Common Boston Species</h3>
       <ul>
-        <li><strong>Mud Tubes:</strong> Pencil-sized tubes found on exterior walls or crawl spaces.</li>
-        <li><strong>Shed Wings:</strong> Often found near windowsills or doors after a swarm.</li>
-        <li><strong>Hollow Wood:</strong> Wood that sounds hollow when tapped with a screwdriver.</li>
-        <li><strong>Bubbling Paint:</strong> Often mistaken for water damage.</li>
+        <li><strong>German Cockroaches:</strong> The most common indoor species, found primarily in kitchens and bathrooms.</li>
+        <li><strong>Oriental Cockroaches:</strong> Often called "water bugs," they prefer damp basements and drains.</li>
+        <li><strong>American Cockroaches:</strong> The largest species, often entering from sewers or steam tunnels.</li>
       </ul>
 
       <h3>The Professional Solution</h3>
-      <p>At LABS PEST CONTROL, we use liquid termiticides to create a continuous chemical barrier around your foundation. This ensures that the colony is neutralized at the source.</p>
+      <p>At LABS PEST CONTROL, we use Integrated Pest Management (IPM). This involves precise baiting, growth regulators that stop reproduction, and sealing entry points around plumbing and baseboards to ensure they never return.</p>
     `
   },
   'cockroaches-return': {
     category: 'Cockroaches',
-    date: 'May 10, 2025',
+    date: 'May 10, 2026',
     title: 'Why DIY Sprays Make Cockroach Infestations Worse',
     subtitle: 'Understanding why over-the-counter solutions often fail and how they spread the problem.',
-    image: 'https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&q=70',
+    image: 'assets/diyspray.png',
     content: `
       <p>Cockroaches have survived for millions of years. Their ability to adapt to almost any environment makes them one of the most difficult pests to eradicate from a modern home or restaurant.</p>
       
@@ -51,10 +50,10 @@ const blogPosts = {
   },
   'rodent-exclusion': {
     category: 'Rodents',
-    date: 'May 08, 2025',
+    date: 'May 08, 2026',
     title: 'Signs Rodents Are Already Living Inside Your Walls',
     subtitle: 'How to detect hidden rodent activity before it causes structural or health issues.',
-    image: 'https://images.unsplash.com/photo-1504817343863-5092a923803e?w=500&q=70',
+    image: 'https://www.havahart.com/media/Articles/Havahart/What-to-Do-if-You-Hear-An-Animal-in-the-Wall.jpg',
     content: `
       <p>Rodents are experts at hiding. By the time you actually see a mouse, you likely already have a significant infestation established within your structure.</p>
       
@@ -72,10 +71,10 @@ const blogPosts = {
   },
   'fumigation-safety': {
     category: 'Safety',
-    date: 'May 06, 2025',
+    date: 'May 06, 2026',
     title: 'How to Prepare Your Home for a Professional Fumigation',
     subtitle: 'A step-by-step checklist to ensure a safe and effective treatment process.',
-    image: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=500&q=70',
+    image: 'https://viscorner.com/_next/image?url=https%3A%2F%2Fimages.viscorner.com%2Fcms%2Fpest_control_and_fumigation_service_on_Vis_Corner_999cd9d79e.jpg&w=3840&q=75',
     content: `
       <p>Preparation is the most critical step in a successful fumigation. Following these steps ensures the safety of your family and the maximum effectiveness of the treatment.</p>
       
@@ -95,10 +94,10 @@ const blogPosts = {
   },
   'commercial-protocols': {
     category: 'Commercial',
-    date: 'May 04, 2025',
+    date: 'May 04, 2026',
     title: 'Protecting Your Restaurants Reputation from Pests',
     subtitle: 'Maintaining high standards of hygiene and compliance in the hospitality industry.',
-    image: 'https://images.unsplash.com/photo-1590682680695-43b964a3ae17?w=500&q=70',
+    image: 'https://media.licdn.com/dms/image/v2/C5612AQG81EsFO0__kQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1557131253519?e=2147483647&v=beta&t=rEs5hwAkogqRYPC2IUZfZQ4T_p6cAc6KiomHJqYGqKE',
     content: `
       <p>In the restaurant business, a single pest sighting can go viral and destroy years of hard work. Our commercial protocols are built on discreet, effective management.</p>
       
@@ -113,10 +112,10 @@ const blogPosts = {
   },
   'spider-fogging': {
     category: 'Mosquitoes',
-    date: 'May 02, 2025',
+    date: 'May 02, 2026',
     title: 'Reducing Mosquito Risk: The Role of Seasonal Fogging',
     subtitle: 'How professional fogging operations protect Boston communities from seasonal mosquito threats.',
-    image: 'https://www.envirogpc.com/cms/thumbnails/00/540x303/images/imported/bl1clnu1jl6.2404041347550.jpg',
+    image: 'https://cdn.shopify.com/s/files/1/0273/5764/2890/files/AdobeStock_346934282_1024x1024.jpg?v=1650386896',
     content: `
       <p>Mosquito control is a significant seasonal challenge in Boston. Professional fogging is a critical tool in reducing the mosquito population and protecting residents from West Nile and EEE.</p>
       
@@ -131,10 +130,10 @@ const blogPosts = {
   },
   'diy-pest-fails': {
     category: 'Education',
-    date: 'April 28, 2025',
+    date: 'April 28, 2026',
     title: 'Why DIY Pest Control Usually Fails',
     subtitle: 'Common mistakes and the hidden costs of amateur treatments.',
-    image: 'https://images.unsplash.com/photo-1590682680695-43b964a3ae17?w=500&q=80',
+    image: 'https://52things2do.com.au/wp-content/uploads/2023/06/DIY-pest-control.jpg',
     content: `
       <p>It's tempting to reach for a can of spray at the first sign of a bug, but DIY methods often lead to recurring problems and wasted money.</p>
       
@@ -149,10 +148,10 @@ const blogPosts = {
   },
   'rodent-signs': {
     category: 'Rodents',
-    date: 'April 25, 2025',
+    date: 'April 25, 2026',
     title: 'Top 5 Signs of a Rodent Infestation',
     subtitle: 'Catching the problem before it becomes an expensive disaster.',
-    image: 'https://images.unsplash.com/photo-1452195100486-9cc805987862?w=500&q=80',
+    image: 'https://woodchuckcanuck.com/wp-content/uploads/2013/09/20130905-miceinwalls-3.jpg',
     content: `
       <p>Rodents are experts at hiding. By the time you actually see a mouse, you likely already have a significant infestation.</p>
       
@@ -168,10 +167,10 @@ const blogPosts = {
   },
   'eco-friendly-methods': {
     category: 'Innovation',
-    date: 'April 22, 2025',
+    date: 'April 22, 2026',
     title: 'Eco-Friendly Treatment Methods',
     subtitle: 'Effective pest management that respects the environment.',
-    image: 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?w=800&q=80',
+    image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTavTE2ZBL0sTPDQbp4T281vs9NEMKsWylBOg&s',
     content: `
       <p>Modern pest control doesn't have to be "toxic." At LABS PEST CONTROL, we offer green solutions that are just as effective as traditional chemicals.</p>
       
