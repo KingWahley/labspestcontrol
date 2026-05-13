@@ -15,44 +15,7 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
     <style>
-      .contact-hero {
-        background: #5b694b;
-        padding: 4rem 1rem;
-        text-align: center;
-        position: relative;
-        overflow: hidden;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        min-height: 500px;
-      }
-      .shoe-overlay {
-        position: absolute;
-        top: 0;
-        left: 50%;
-        transform: translateX(-50%);
-        width: 300px;
-        z-index: 1;
-        opacity: 0.9;
-      }
-      .bug-overlay {
-        position: absolute;
-        top: 280px;
-        left: 52%;
-        transform: translateX(-50%);
-        width: 60px;
-        z-index: 0;
-      }
-      .contact-hero h1 {
-        font-family: "Bebas Neue", sans-serif;
-        font-size: clamp(4rem, 12vw, 8rem);
-        color: #fff;
-        line-height: 0.85;
-        z-index: 10;
-        transform: rotate(-3deg);
-        text-shadow: 2px 4px 10px rgba(0, 0, 0, 0.2);
-      }
+
       .contact-grid {
         display: grid;
         grid-template-columns: 1fr 1.5fr;
@@ -157,40 +120,22 @@
       </div>
     </nav>
 
-    <section class="hero" style="max-height: 60vh">
+    <section class="hero" style="min-height: 60vh">
       <img
         class="hero-img"
         src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1400&q=80"
-        alt="Professional pest control technician preparing treatment"
+        alt="Contact LABS PEST CONTROL"
       />
       <div class="hero-overlay"></div>
       <div class="hero-content">
         <div class="crumb">
-          LABS PEST CONTROL &nbsp;/&nbsp; <span>Our Services</span>
+          LABS PEST CONTROL &nbsp;/&nbsp; <span>Contact Us</span>
         </div>
-        <h1>ELIMINATING PESTS<br /><em>WITH</em> SCIENTIFIC PRECISION</h1>
+        <h1>GET IN TOUCH<br /><em>FOR A</em> PEST-FREE SPACE</h1>
         <p class="hero-sub">
-          Boston's most comprehensive pest management portfolio. We don't just
-          treat symptoms — we solve the source of the infestation.
+          Have a question or need an urgent inspection? Our team is ready to
+          assist you 24/7 across the Greater Boston area.
         </p>
-        <div class="hero-btns">
-          <button
-            class="btn-primary"
-            onclick="
-              document
-                .getElementById('core-services')
-                .scrollIntoView({ behavior: 'smooth' })
-            "
-          >
-            Explore Services
-          </button>
-          <button
-            class="btn-outline-w"
-            onclick="window.location.href = 'index.html#diagnosis'"
-          >
-            Get Free Quote
-          </button>
-        </div>
       </div>
     </section>
 
