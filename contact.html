@@ -157,20 +157,42 @@
       </div>
     </nav>
 
-    <header class="contact-hero">
+    <section class="hero" style="max-height: 60vh">
       <img
-        src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?w=600&q=80"
-        alt="Shoe bottom"
-        class="shoe-overlay"
+        class="hero-img"
+        src="https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1400&q=80"
+        alt="Professional pest control technician preparing treatment"
       />
-      <img
-        src="https://community.halte.in/uploads/default/original/1X/60f25ac244107cb4d071e3aa42eb3f38203faca1.jpeg"
-        alt="Cockroach"
-        class="bug-overlay"
-        style="filter: brightness(0.8) contrast(1.2)"
-      />
-      <h1>DON'T USE<br />YOUR SHOE</h1>
-    </header>
+      <div class="hero-overlay"></div>
+      <div class="hero-content">
+        <div class="crumb">
+          LABS PEST CONTROL &nbsp;/&nbsp; <span>Our Services</span>
+        </div>
+        <h1>ELIMINATING PESTS<br /><em>WITH</em> SCIENTIFIC PRECISION</h1>
+        <p class="hero-sub">
+          Boston's most comprehensive pest management portfolio. We don't just
+          treat symptoms — we solve the source of the infestation.
+        </p>
+        <div class="hero-btns">
+          <button
+            class="btn-primary"
+            onclick="
+              document
+                .getElementById('core-services')
+                .scrollIntoView({ behavior: 'smooth' })
+            "
+          >
+            Explore Services
+          </button>
+          <button
+            class="btn-outline-w"
+            onclick="window.location.href = 'index.html#diagnosis'"
+          >
+            Get Free Quote
+          </button>
+        </div>
+      </div>
+    </section>
 
     <section class="container">
       <div class="contact-grid">
@@ -219,7 +241,7 @@
             class="sec-title"
             style="font-size: 2.2rem; margin-bottom: 2.5rem"
           >
-            REQUEST A FREE<br />SITE INSPECTION
+            REQUEST SITE INSPECTION
           </h2>
           <form class="contact-form">
             <div class="form-row">
