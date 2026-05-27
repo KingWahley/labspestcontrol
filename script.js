@@ -79,7 +79,7 @@ staggeredGrids.forEach(grid => {
     }
 });
 
-// Initialize Lucide Icons
+// Initialize Lucide Icons & Responsive Mobile Navigation Drawer
 document.addEventListener('DOMContentLoaded', () => {
     if (typeof lucide !== 'undefined') {
         lucide.createIcons();
@@ -89,5 +89,64 @@ document.addEventListener('DOMContentLoaded', () => {
     const yearEl = document.getElementById('year');
     if (yearEl) {
         yearEl.textContent = new Date().getFullYear();
+    }
+
+    // Mobile navigation setup
+    const nav = document.querySelector('nav');
+    const navLinks = document.querySelector('.nav-links');
+    if (nav && navLinks) {
+        // Create hamburger button dynamically
+        const toggleBtn = document.createElement('button');
+        toggleBtn.className = 'nav-toggle';
+        toggleBtn.setAttribute('aria-label', 'Toggle Navigation');
+        toggleBtn.innerHTML = `
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        `;
+        
+        // Insert toggle button before the nav-links element
+        nav.insertBefore(toggleBtn, navLinks);
+        
+        // Toggle action
+        toggleBtn.addEventListener('click', (e) => {
+            e.stopPropagation();
+            const isOpen = navLinks.classList.toggle('open');
+            toggleBtn.classList.toggle('open');
+            document.body.classList.toggle('nav-active', isOpen);
+            
+            // Coordinate with Lenis smooth scroll block
+            if (typeof lenis !== 'undefined') {
+                if (isOpen) {
+                    lenis.stop();
+                } else {
+                    lenis.start();
+                }
+            }
+        });
+        
+        // Close menu when clicking link items
+        navLinks.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                toggleBtn.classList.remove('open');
+                document.body.classList.remove('nav-active');
+                if (typeof lenis !== 'undefined') {
+                    lenis.start();
+                }
+            });
+        });
+        
+        // Close menu when clicking outside of navbar
+        document.addEventListener('click', (e) => {
+            if (navLinks.classList.contains('open') && !nav.contains(e.target)) {
+                navLinks.classList.remove('open');
+                toggleBtn.classList.remove('open');
+                document.body.classList.remove('nav-active');
+                if (typeof lenis !== 'undefined') {
+                    lenis.start();
+                }
+            }
+        });
     }
 });
