@@ -279,6 +279,7 @@ nav{background:#fff;border-bottom:1px solid #e8e8e4;padding:0 2rem;display:flex;
 .btn-emg-o:hover{background:rgba(255,255,255,0.08)}
 
 /* --- FOOTER --- */
+footer{background:var(--bg2);border-top:1px solid #ddd;padding:3rem clamp(1.5rem, 6vw, 3.5rem) 1.5rem;width:100%}
 .footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:2.5rem;max-width:1060px;margin:0 auto 2rem}
 @media(max-width:768px){.footer-grid{grid-template-columns:1fr 1fr}}
 @media(max-width:480px){.footer-grid{grid-template-columns:1fr}}
@@ -442,5 +443,13 @@ body.nav-active {
   .hero-btns .btn-primary, .hero-btns .btn-outline {
     width: 100%;
     text-align: center;
+  }
+  
+  /* Footer bottom centered alignment on small screens */
+  .fbottom {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    gap: 1rem;
   }
 }
