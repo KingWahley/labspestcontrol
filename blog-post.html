@@ -3,11 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>The 2026 Guide to Termite Protection in Boston | LABS PEST CONTROL</title>
-    <meta
-      name="description"
-      content="Learn how to protect your Boston property from subterranean termites with our comprehensive 2026 guide. Expert tips from LABS PEST CONTROL."
-    />
+    <title>Pest Control Guide | LABS PEST CONTROL Boston</title>
+    <meta name="description" content="Expert pest control advice and guides from LABS PEST CONTROL. Protecting Boston homes and businesses with scientific precision." />
+    <meta name="keywords" content="pest control guide, pest management tips, boston exterminator, labs pest control blog" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://labspestcontrol.com/blog-post.html" />
+    <meta id="og-title" property="og:title" content="Pest Control Guide | LABS PEST CONTROL" />
+    <meta id="og-description" property="og:description" content="Expert pest control advice and guides from LABS PEST CONTROL." />
+    <meta id="og-image" property="og:image" content="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=1400&q=80" />
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://labspestcontrol.com/blog-post.html" />
+    <meta id="tw-title" property="twitter:title" content="Pest Control Guide | LABS PEST CONTROL" />
+    <meta id="tw-description" property="twitter:description" content="Expert pest control advice and guides from LABS PEST CONTROL." />
+    <meta id="tw-image" property="twitter:image" content="https://images.unsplash.com/photo-1581244277943-fe4a9c777189?w=1400&q=80" />
+
     <link rel="stylesheet" href="style.css" />
     <script src="https://unpkg.com/lucide@latest"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
@@ -309,18 +322,18 @@
         <div class="fcol">
           <h5>Service Areas</h5>
           <ul>
-            <li>Lekki Phase 1</li>
-            <li>Ikoyi</li>
-            <li>Victoria Island</li>
-            <li>Ikeja Gra</li>
-            <li>Ajah</li>
+            <li>Back Bay</li>
+            <li>South End</li>
+            <li>Cambridge</li>
+            <li>Somerville</li>
+            <li>Quincy</li>
           </ul>
         </div>
         <div class="fcol">
           <h5>Contact</h5>
           <ul>
             <li>
-              <i data-lucide="phone" style="width: 14px; height: 14px; margin-right: 6px"></i>+234 816 911 1411
+              <i data-lucide="phone" style="width: 14px; height: 14px; margin-right: 6px"></i>781-691-1411
             </li>
             <li>
               <i data-lucide="mail" style="width: 14px; height: 14px; margin-right: 6px"></i>Ayomipor@labspestcontrol.com
@@ -357,7 +370,27 @@
           document.getElementById("post-date").textContent = post.date;
           document.getElementById("post-hero-img").src = post.image;
           document.getElementById("post-body").innerHTML = post.content;
-          document.title = post.title + " | LABS PEST CONTROL";
+          
+          // SEO Updates
+          const fullTitle = post.title + " | LABS PEST CONTROL Boston";
+          document.title = fullTitle;
+          
+          const metaDesc = document.querySelector('meta[name="description"]');
+          if (metaDesc) metaDesc.setAttribute("content", post.summary || post.title + " - Expert pest control advice from LABS PEST CONTROL.");
+
+          // OG & Twitter Updates
+          const updateMeta = (id, attr, val) => {
+            const el = document.getElementById(id);
+            if (el) el.setAttribute(attr, val);
+          };
+
+          updateMeta("og-title", "content", fullTitle);
+          updateMeta("tw-title", "content", fullTitle);
+          updateMeta("og-image", "content", post.image);
+          updateMeta("tw-image", "content", post.image);
+          updateMeta("og-description", "content", post.summary || post.title);
+          updateMeta("tw-description", "content", post.summary || post.title);
+
         } else {
           document.getElementById("post-title").textContent = "Article Not Found";
           document.getElementById("post-body").innerHTML = "<p>The article you are looking for does not exist.</p>";

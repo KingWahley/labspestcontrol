@@ -3,6 +3,7 @@ const blogPosts = {
     category: 'Cockroaches',
     date: 'May 12, 2026',
     title: 'THE 2026 GUIDE TO COCKROACH PROTECTION IN BOSTON',
+    summary: 'Everything you need to know about eliminating persistent infestations in Boston\'s historic neighborhoods and modern apartments.',
     subtitle: 'Everything you need to know about eliminating persistent infestations in Boston\'s historic neighborhoods and modern apartments.',
     image: 'https://static.vecteezy.com/system/resources/previews/020/336/322/non_2x/cockroach-with-inside-public-bus-eliminate-cockroach-in-vehicle-building-apartment-house-cockroaches-carriers-of-disease-eliminated-idea-get-rid-insects-and-put-insect-protection-systems-photo.JPG',
     content: `
@@ -31,6 +32,7 @@ const blogPosts = {
     category: 'Cockroaches',
     date: 'May 10, 2026',
     title: 'Why DIY Sprays Make Cockroach Infestations Worse',
+    summary: 'Understanding why over-the-counter solutions often fail and how they spread the problem deeper into your walls.',
     subtitle: 'Understanding why over-the-counter solutions often fail and how they spread the problem.',
     image: 'assets/diyspray.png',
     content: `
@@ -52,6 +54,7 @@ const blogPosts = {
     category: 'Rodents',
     date: 'May 08, 2026',
     title: 'Signs Rodents Are Already Living Inside Your Walls',
+    summary: 'How to detect hidden rodent activity in your home before it causes structural or health issues.',
     subtitle: 'How to detect hidden rodent activity before it causes structural or health issues.',
     image: 'https://www.havahart.com/media/Articles/Havahart/What-to-Do-if-You-Hear-An-Animal-in-the-Wall.jpg',
     content: `
@@ -59,7 +62,7 @@ const blogPosts = {
       
       <h3>The Danger of Silence</h3>
       <p>Rodents can cause fires by gnawing through electrical wiring and spread diseases through urine and droppings that contaminate your living spaces.</p>
- 
+      
       <div class="discovery-box">
         <h4><i data-lucide="volume-2"></i> What to Listen For</h4>
         <p>Scratching, gnawing, or scurrying sounds at night are the most common indicators of activity behind drywall or in crawl spaces.</p>
@@ -73,6 +76,7 @@ const blogPosts = {
     category: 'Safety',
     date: 'May 06, 2026',
     title: 'How to Prepare Your Home for a Professional Fumigation',
+    summary: 'A step-by-step checklist to ensure a safe and effective treatment process for your family and pets.',
     subtitle: 'A step-by-step checklist to ensure a safe and effective treatment process.',
     image: 'https://viscorner.com/_next/image?url=https%3A%2F%2Fimages.viscorner.com%2Fcms%2Fpest_control_and_fumigation_service_on_Vis_Corner_999cd9d79e.jpg&w=3840&q=75',
     content: `
@@ -96,6 +100,7 @@ const blogPosts = {
     category: 'Commercial',
     date: 'May 04, 2026',
     title: 'Protecting Your Restaurants Reputation from Pests',
+    summary: 'Maintaining high standards of hygiene and compliance in the hospitality industry through professional pest management.',
     subtitle: 'Maintaining high standards of hygiene and compliance in the hospitality industry.',
     image: 'https://media.licdn.com/dms/image/v2/C5612AQG81EsFO0__kQ/article-cover_image-shrink_720_1280/article-cover_image-shrink_720_1280/0/1557131253519?e=2147483647&v=beta&t=rEs5hwAkogqRYPC2IUZfZQ4T_p6cAc6KiomHJqYGqKE',
     content: `
@@ -114,6 +119,7 @@ const blogPosts = {
     category: 'Mosquitoes',
     date: 'May 02, 2026',
     title: 'Reducing Mosquito Risk: The Role of Seasonal Fogging',
+    summary: 'How professional fogging operations protect Boston communities from seasonal mosquito threats like West Nile and EEE.',
     subtitle: 'How professional fogging operations protect Boston communities from seasonal mosquito threats.',
     image: 'https://cdn.shopify.com/s/files/1/0273/5764/2890/files/AdobeStock_346934282_1024x1024.jpg?v=1650386896',
     content: `
@@ -132,6 +138,7 @@ const blogPosts = {
     category: 'Education',
     date: 'April 28, 2026',
     title: 'Why DIY Pest Control Usually Fails',
+    summary: 'Common mistakes and the hidden costs of amateur treatments compared to professional pest management.',
     subtitle: 'Common mistakes and the hidden costs of amateur treatments.',
     image: 'https://52things2do.com.au/wp-content/uploads/2023/06/DIY-pest-control.jpg',
     content: `
@@ -150,6 +157,7 @@ const blogPosts = {
     category: 'Rodents',
     date: 'April 25, 2026',
     title: 'Top 5 Signs of a Rodent Infestation',
+    summary: 'Catching a rodent problem before it becomes an expensive disaster with our top 5 early warning signs.',
     subtitle: 'Catching the problem before it becomes an expensive disaster.',
     image: 'https://woodchuckcanuck.com/wp-content/uploads/2013/09/20130905-miceinwalls-3.jpg',
     content: `
@@ -169,6 +177,7 @@ const blogPosts = {
     category: 'Innovation',
     date: 'April 22, 2026',
     title: 'Eco-Friendly Treatment Methods',
+    summary: 'Effective pest management that respects the environment through botanical pesticides and sustainable practices.',
     subtitle: 'Effective pest management that respects the environment.',
     image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTavTE2ZBL0sTPDQbp4T281vs9NEMKsWylBOg&s',
     content: `
