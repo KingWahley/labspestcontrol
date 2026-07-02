@@ -27,6 +27,8 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
+    <!-- Cloudflare Turnstile -->
+    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
     <style>
 
       .contact-grid {
@@ -201,25 +203,33 @@
           >
             REQUEST SITE INSPECTION
           </h2>
-          <form class="contact-form">
+          <form class="contact-form" id="contactForm">
+            <!-- Web3Forms hidden access key field -->
+            <input type="hidden" name="access_key" value="4d7c8a3b-4e73-4ec3-87c5-9d458a6ee12e" />
+
+            <!-- Honeypot field for spam protection (hidden from legitimate users) -->
+            <div style="position: absolute; left: -9999px;" aria-hidden="true">
+              <input type="text" name="website" id="website" tabindex="-1" autocomplete="off" />
+            </div>
+
             <div class="form-row">
               <div class="form-group">
-                <label>Full Name</label>
-                <input type="text" placeholder="e.g. John Doe" required />
+                <label for="name">Full Name</label>
+                <input type="text" id="name" name="name" placeholder="e.g. John Doe" required />
               </div>
               <div class="form-group">
-                <label>Phone Number</label>
-                <input type="tel" placeholder="e.g. 0801 234 5678" required />
+                <label for="phone">Phone Number</label>
+                <input type="tel" id="phone" name="phone" placeholder="e.g. 0801 234 5678" required />
               </div>
             </div>
             <div class="form-row">
               <div class="form-group">
-                <label>Email Address</label>
-                <input type="email" placeholder="john@example.com" required />
+                <label for="email">Email Address</label>
+                <input type="email" id="email" name="email" placeholder="john@example.com" required />
               </div>
               <div class="form-group">
-                <label>Pest Type</label>
-                <select>
+                <label for="subject">Subject</label>
+                <select id="subject" name="subject">
                   <option>Cockroaches</option>
                   <option>Termites</option>
                   <option>Rodents (Rats/Mice)</option>
@@ -230,18 +240,30 @@
               </div>
             </div>
             <div class="form-group">
-              <label>Your Message / Location Details</label>
+              <label for="message">Your Message / Location Details</label>
               <textarea
+                id="message"
+                name="message"
                 rows="4"
                 placeholder="Briefly describe the issue and your location in Greater Boston..."
+                required
               ></textarea>
             </div>
+
+            <!-- Success/Error message container -->
+            <div id="formMessage" class="form-message" style="display: none;"></div>
+
+            <!-- Cloudflare Turnstile Widget -->
+            <div class="cf-turnstile" data-sitekey="0x4AAAAAADusM6TuOTGHbEH8"></div>
+
             <button
               class="btn-primary"
               type="submit"
+              id="submitBtn"
               style="width: fit-content; padding: 1rem 3rem"
             >
-              Send Request Now
+              <span id="btnText">Send Request Now</span>
+              <span id="btnLoading" style="display: none;">Sending...</span>
             </button>
           </form>
         </div>
