@@ -154,7 +154,7 @@ document.addEventListener('DOMContentLoaded', () => {
     // Contact Form Web3Forms Integration with Anti-Spam Protection
     // ==========================================
     // This implementation uses client-side validation only.
-    // Web3Forms handles all server-side processing including CAPTCHA verification.
+    // Web3Forms handles all server-side processing including hCaptcha verification.
     // No backend endpoints, serverless functions, or server-side verification are implemented.
     // ==========================================
     const contactForm = document.getElementById('contactForm');
@@ -164,17 +164,9 @@ document.addEventListener('DOMContentLoaded', () => {
         const btnLoading = document.getElementById('btnLoading');
         const formMessage = document.getElementById('formMessage');
 
-        // Cloudflare Turnstile Site Key
-        // This key is used only for the client-side widget display.
-        // Web3Forms handles all CAPTCHA verification on their end.
-        const TURNSTILE_SITE_KEY = '0x4AAAAAADusM6TuOTGHbEH8';
-
-        // Track when the page loaded for time-based validation
-        const pageLoadTime = Date.now();
-
-        // Rate limiting configuration - prevents rapid form submissions
-        const RATE_LIMIT_MS = 60000; // 60 seconds between submissions
-        const RATE_LIMIT_KEY = 'labspest_last_submission';
+        // ==========================================
+        // Validation Helper Functions
+        // ==========================================
 
         /**
          * Validates email format using regex
@@ -223,27 +215,18 @@ document.addEventListener('DOMContentLoaded', () => {
         }
 
         /**
-         * Checks rate limiting - prevents more than 1 submission per 60 seconds
-         * Uses localStorage to track the last submission timestamp
-         * @returns {boolean} - True if rate limit is exceeded
+         * Checks if text contains only numbers or symbols
+         * @param {string} text - The text to check
+         * @returns {boolean} - True if text is only numbers/symbols
          */
-        function isRateLimited() {
-            const lastSubmission = localStorage.getItem(RATE_LIMIT_KEY);
-            if (lastSubmission) {
-                const timeSinceLastSubmission = Date.now() - parseInt(lastSubmission);
-                if (timeSinceLastSubmission < RATE_LIMIT_MS) {
-                    return true;
-                }
-            }
-            return false;
+        function isOnlyNumbersOrSymbols(text) {
+            const lettersOnly = text.replace(/[^a-zA-Z]/g, '');
+            return lettersOnly.length === 0;
         }
 
-        /**
-         * Records the current time as the last submission time for rate limiting
-         */
-        function recordSubmission() {
-            localStorage.setItem(RATE_LIMIT_KEY, Date.now().toString());
-        }
+        // ==========================================
+        // UI Helper Functions
+        // ==========================================
 
         /**
          * Shows a message to the user with specified type and text
@@ -251,7 +234,7 @@ document.addEventListener('DOMContentLoaded', () => {
          * @param {string} message - The message to display
          */
         function showMessage(type, message) {
-            formMessage.style.display = 'block';
+            formMessage.style.display = 'flex';
             formMessage.className = `form-message ${type}`;
             
             // Set message content with appropriate icon
@@ -268,16 +251,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 formMessage.style.padding = '1rem';
                 formMessage.style.borderRadius = '4px';
                 formMessage.style.border = '1px solid #c3e6cb';
-                formMessage.style.display = 'flex';
-                formMessage.style.alignItems = 'center';
             } else {
                 formMessage.style.background = '#f8d7da';
                 formMessage.style.color = '#721c24';
                 formMessage.style.padding = '1rem';
                 formMessage.style.borderRadius = '4px';
                 formMessage.style.border = '1px solid #f5c6cb';
-                formMessage.style.display = 'flex';
-                formMessage.style.alignItems = 'center';
             }
         }
 
@@ -301,11 +280,15 @@ document.addEventListener('DOMContentLoaded', () => {
             submitBtn.style.cursor = isLoading ? 'not-allowed' : 'pointer';
         }
 
+        // ==========================================
+        // Form Submission Handler
+        // ==========================================
+
         /**
          * Handles the contact form submission with comprehensive anti-spam validation.
          * All validation is performed client-side. The form data is submitted directly
          * to the Web3Forms API, which handles all server-side processing including
-         * CAPTCHA verification, email delivery, and spam filtering.
+         * hCaptcha verification, email delivery, and spam filtering.
          * 
          * No backend endpoints or server-side verification are implemented.
          */
@@ -315,44 +298,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
             // ---- ANTI-SPAM LAYER 1: Honeypot Check ----
             // Hidden field that bots may fill but humans never see
-            const honeypot = document.getElementById('website').value;
+            const honeypot = document.getElementById('botcheck').value;
             if (honeypot) {
                 showMessage('error', 'Spam detected.');
                 return;
             }
 
-            // ---- ANTI-SPAM LAYER 2: Time-Based Validation ----
-            // Bots often submit forms instantly; humans need time to fill them
-            const timeSinceLoad = Date.now() - pageLoadTime;
-            if (timeSinceLoad < 5000) {
-                showMessage('error', 'Please take a moment to complete the form.');
-                return;
-            }
-
-            // ---- ANTI-SPAM LAYER 3: Rate Limiting ----
-            // Prevents rapid multiple submissions from the same browser
-            if (isRateLimited()) {
-                showMessage('error', 'Please wait before sending another message.');
-                return;
-            }
-
-            // ---- ANTI-SPAM LAYER 4: Cloudflare Turnstile Validation ----
-            // Ensures the user has completed the Turnstile verification
-            // Note: Web3Forms handles the actual CAPTCHA verification on their end
-            const turnstileResponse = document.querySelector('[name="cf-turnstile-response"]');
-            if (!turnstileResponse || !turnstileResponse.value) {
-                showMessage('error', 'Please complete the CAPTCHA verification.');
-                return;
-            }
-
-            // Get form values
+            // ---- Get and Validate Form Values ----
             const name = document.getElementById('name').value.trim();
             const phone = document.getElementById('phone').value.trim();
             const email = document.getElementById('email').value.trim();
             const subject = document.getElementById('subject').value;
             const message = document.getElementById('message').value.trim();
 
-            // ---- Input Validation ----
             // Check required fields
             if (!name || !phone || !email || !message) {
                 showMessage('error', 'Please fill in all required fields.');
@@ -365,9 +323,26 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
-            // Message must be at least 10 characters
+            // Message must be at least 10 characters and max 3000
             if (message.length < 10) {
                 showMessage('error', 'Please enter a more detailed message (at least 10 characters).');
+                return;
+            }
+
+            if (message.length > 3000) {
+                showMessage('error', 'Message is too long. Please keep it under 3000 characters.');
+                return;
+            }
+
+            // Check if message is empty or whitespace only
+            if (message.replace(/\s/g, '').length === 0) {
+                showMessage('error', 'Please enter a valid message.');
+                return;
+            }
+
+            // Check if message contains only numbers or symbols
+            if (isOnlyNumbersOrSymbols(message)) {
+                showMessage('error', 'Please enter a meaningful message with letters.');
                 return;
             }
 
@@ -390,6 +365,15 @@ document.addEventListener('DOMContentLoaded', () => {
                 return;
             }
 
+            // ---- ANTI-SPAM LAYER 2: hCaptcha Validation ----
+            // Ensures the user has completed the hCaptcha verification
+            // Note: Web3Forms handles the actual hCaptcha verification on their end
+            const hcaptchaResponse = document.querySelector('[name="h-captcha-response"]');
+            if (!hcaptchaResponse || !hcaptchaResponse.value) {
+                showMessage('error', 'Please complete the CAPTCHA verification.');
+                return;
+            }
+
             // ---- All validation passed - proceed with submission to Web3Forms ----
             setLoadingState(true);
 
@@ -401,8 +385,8 @@ document.addEventListener('DOMContentLoaded', () => {
             formData.append('email', email);
             formData.append('subject', subject);
             formData.append('message', message);
-            // Include Turnstile response for Web3Forms to verify
-            formData.append('cf-turnstile-response', turnstileResponse.value);
+            // Include hCaptcha response for Web3Forms to verify
+            formData.append('hcaptcha-response', hcaptchaResponse.value);
 
             try {
                 // Submit directly to Web3Forms API (no backend required)
@@ -414,13 +398,12 @@ document.addEventListener('DOMContentLoaded', () => {
                 const result = await response.json();
 
                 if (result.success) {
-                    // Success: record submission time, show message, and reset form
-                    recordSubmission();
+                    // Success: show message, reset form, and reset hCaptcha
                     showMessage('success', 'Thank you! Your message has been sent successfully. We will get back to you soon.');
                     contactForm.reset();
-                    // Reset Turnstile for the next submission
-                    if (typeof turnstile !== 'undefined') {
-                        turnstile.reset();
+                    // Reset hCaptcha for the next submission
+                    if (typeof hcaptcha !== 'undefined') {
+                        hcaptcha.reset();
                     }
                 } else {
                     // Web3Forms API returned an error

@@ -27,8 +27,8 @@
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@studio-freight/lenis@1.0.42/dist/lenis.min.js"></script>
-    <!-- Cloudflare Turnstile -->
-    <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>
+    <!-- hCaptcha -->
+    <script src="https://hcaptcha.com/1/api.js" async defer></script>
     <style>
 
       .contact-grid {
@@ -209,7 +209,7 @@
 
             <!-- Honeypot field for spam protection (hidden from legitimate users) -->
             <div style="position: absolute; left: -9999px;" aria-hidden="true">
-              <input type="text" name="website" id="website" tabindex="-1" autocomplete="off" />
+              <input type="text" name="botcheck" id="botcheck" tabindex="-1" autocomplete="off" />
             </div>
 
             <div class="form-row">
@@ -253,8 +253,8 @@
             <!-- Success/Error message container -->
             <div id="formMessage" class="form-message" style="display: none;"></div>
 
-            <!-- Cloudflare Turnstile Widget -->
-            <div class="cf-turnstile" data-sitekey="0x4AAAAAADusM6TuOTGHbEH8"></div>
+            <!-- hCaptcha Widget -->
+            <div class="h-captcha" data-sitekey="10000000-ffff-ffff-ffff-000000000001"></div>
 
             <button
               class="btn-primary"
