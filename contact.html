@@ -30,12 +30,18 @@
     <!-- hCaptcha -->
     <script src="https://hcaptcha.com/1/api.js" async defer></script>
     <style>
+      /* Prevent horizontal overflow */
+      .contact-section-inner {
+        max-width: 100%;
+        overflow: hidden;
+      }
 
       .contact-grid {
         display: grid;
         grid-template-columns: 1fr 1.5fr;
         gap: clamp(2rem, 5vw, 4rem);
-        padding: clamp(2rem, 6vw, 5rem) 0;
+        padding: clamp(2rem, 6vw, 4rem) 0;
+        max-width: 100%;
       }
       @media (max-width: 800px) {
         .contact-grid {
@@ -47,11 +53,18 @@
         background: var(--bg2);
         padding: clamp(1.25rem, 5vw, 2.5rem);
         border-radius: 4px;
+        max-width: 100%;
+        overflow: hidden;
       }
       .info-item {
         display: flex;
         gap: 1.25rem;
         margin-bottom: 2rem;
+        min-width: 0;
+      }
+      .info-item > div:last-child {
+        min-width: 0;
+        overflow: hidden;
       }
       .info-icon {
         width: 44px;
@@ -76,10 +89,13 @@
         font-size: 1.1rem;
         font-weight: 500;
         color: var(--ink);
+        word-break: break-word;
+        overflow-wrap: break-word;
       }
       .contact-form {
         display: grid;
         gap: 1.5rem;
+        max-width: 100%;
       }
       .form-row {
         display: grid;
@@ -109,11 +125,37 @@
         font-family: "DM Sans", sans-serif;
         font-size: 0.95rem;
         border-radius: 2px;
+        max-width: 100%;
+        box-sizing: border-box;
       }
       .form-group input:focus,
       .form-group textarea:focus {
         outline: none;
         border-color: var(--accent);
+      }
+
+      /* Mobile specific fixes for contact page */
+      @media (max-width: 480px) {
+        .contact-grid {
+          padding: 2rem 0;
+        }
+        .info-card {
+          padding: 1.25rem;
+        }
+        .info-val {
+          font-size: 0.95rem;
+        }
+        .sec-title {
+          font-size: 1.8rem !important;
+        }
+        .h-captcha {
+          width: 100%;
+          min-height: 74px;
+        }
+        #submitBtn {
+          width: 100% !important;
+          padding: 1rem 1.5rem !important;
+        }
       }
     </style>
   </head>
