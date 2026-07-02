@@ -385,8 +385,8 @@ document.addEventListener('DOMContentLoaded', () => {
             formData.append('email', email);
             formData.append('subject', subject);
             formData.append('message', message);
-            // Include hCaptcha response for Web3Forms to verify
-            formData.append('hcaptcha-response', hcaptchaResponse.value);
+            // Note: hCaptcha verification is handled by Web3Forms automatically
+            // The hcaptcha-response is not sent to avoid cluttering admin notifications
 
             try {
                 // Submit directly to Web3Forms API (no backend required)
